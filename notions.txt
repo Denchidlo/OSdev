@@ -11,9 +11,6 @@
     -M intel -> shows in intel syntax
     -M i386 -> displays content in 32bit layout
 
-<Raw data Dump>
-    $ readelf -x <.segment> <objectFile>
-
 <Elf sprcification>
     $ man elf
 
@@ -22,4 +19,8 @@
         $ readelf ...
     Flags:
         -h -> returns elf header
-        
+        -S -> show all section headers
+        -x -> hexadump of a section
+    Some examples:
+        Shows hexadump of a sellected section 
+            $ readelf -x <.section | section number> <objectFile> 
