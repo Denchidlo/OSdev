@@ -1,15 +1,19 @@
 <Compilation>
-    $ gcc _name.c_ -o _output_
+    Flags:
+        -m32    -> creates obj file
+        -g      -> add debug info
+    Sample:
+        $ gcc _name.c_ -o _output_
 
 <Dump of data with disasembly>
     $ objdump -z -M intel -S -D <objectFile>
 
 <objdump options:>
-    --no-show-raw-insn -> removes opcodes
-    -d -> only executable sections
-    -D -> content of all sections
-    -M intel -> shows in intel syntax
-    -M i386 -> displays content in 32bit layout
+    --no-show-raw-insn  -> removes opcodes
+    -d                  -> only executable sections
+    -D                  -> content of all sections
+    -M intel            -> shows in intel syntax
+    -M i386             -> displays content in 32bit layout
 
 <Elf sprcification>
     $ man elf
@@ -18,9 +22,11 @@
     General:
         $ readelf ...
     Flags:
-        -h -> returns elf header
-        -S -> show all section headers
-        -x -> hexadump of a section
+        -h      -> returns elf header
+        -S      -> show all section headers
+        -s      -> to show symbols table (SYMTAB|DYNSYM)
+        -x      -> hexadump of a section
+        -l      -> program header table
     Some examples:
         Shows hexadump of a sellected section 
             $ readelf -x <.section | section number> <objectFile> 

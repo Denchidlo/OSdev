@@ -1,0 +1,13 @@
+How to start use gdb:
+    -> $ gdb <executive file>
+
+Some commands:
+    [info target]                       | Give common info about current executive
+    [maint info sections]  <SECTIONS>   | Much more detailed info about sections, also shows their flags
+    [info functions]                    | Give info about FUNC symbols in program
+    [info variables]                    | Give info about OBJECT symbols in program
+    [disassemble] <FUNC_SYMBOL>         | Returns disassemble of the selected function
+        Disassemble options:
+            /s                          | Includes source
+            /rs                         | Shows raw instructions with opcode
+            /sr 'file'::func            | Returns disassemble of the selected function from selected file

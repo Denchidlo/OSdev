@@ -1,4 +1,3 @@
-#include "stdint.h"
 #include "stdio.h"
 
 //Here u can see an exaple used for future compilation and elf analysis
