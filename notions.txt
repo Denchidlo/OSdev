@@ -27,6 +27,7 @@
         -s      -> to show symbols table (SYMTAB|DYNSYM)
         -x      -> hexadump of a section
         -l      -> program header table
+        -w      -> show all the debug information
     Some examples:
         Shows hexadump of a sellected section 
             $ readelf -x <.section | section number> <objectFile> 

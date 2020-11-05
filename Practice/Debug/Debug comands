@@ -1,13 +1,37 @@
+>Debug manual
 How to start use gdb:
     -> $ gdb <executive file>
 
-Some commands:
+Static program inspection:
     [info target]                       | Give common info about current executive
     [maint info sections]  <SECTIONS>   | Much more detailed info about sections, also shows their flags
     [info functions]                    | Give info about FUNC symbols in program
     [info variables]                    | Give info about OBJECT symbols in program
     [disassemble] <FUNC_SYMBOL>         | Returns disassemble of the selected function
-        Disassemble options:
-            /s                          | Includes source
-            /rs                         | Shows raw instructions with opcode
-            /sr 'file'::func            | Returns disassemble of the selected function from selected file
+        {
+            Disassemble options:
+                /s                          | Includes source
+                /rs                         | Shows raw instructions with opcode
+                /sr 'file'::func            | Returns disassemble of the selected function from selected file
+        }
+
+Runtime inspection of a program
+    [r]                                 | To run program
+    [b]                                 | To set a breakpoint on a selected code line
+        {
+            Breakpoint arguments:
+                1)Lines                     [(gdb) b 3]
+                2)Function                  [(gdb) b main]
+                3)Memory address            [(gdb) b *0x400526]
+                4)<Source file>:<code row>  [(gdb) b hello.c:3]
+                5)<Source file>:<function>  [(gdb) b hello.c:main]
+        }
+    [n]                                 | To proceed to the next statement
+    [s]                                 | To make step into
+    [ni]                                | Do not make full step but go to the next instruction
+    [si]                                | Step into the next instruction of called function
+    [until]                             | This comands executes until the next line is greater than current
+    [finish]                            | This comands executes until function return it's value (better way to go through functions)
+    [bt]                                | Prints backtrace of all stack frames. Backtrace is a list of currently active functions
+    [up/down]                           | Makes step UP/DOWN in the stack frame
+    [info registers]                    | Shows the most common registers
