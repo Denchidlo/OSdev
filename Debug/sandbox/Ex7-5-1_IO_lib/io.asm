@@ -9,6 +9,9 @@ start:
 msg db 'Welcome to Operating System!', 0ah, 0dh, 00h
 
 boot:
+    mov ax, 0x07c0
+    mov ds, ax
+    mov es, ax 
     mov bx, 1010h
     call MovCursor
     mov bx, 0404h
