@@ -1,0 +1,8 @@
+*******************************************************
+    .gdbinit is a configuration file which is 
+     loaded into gdb in the current directory
+     to avoid repeating input in each session
+*******************************************************
+
+The systax is about to be the same with usual gdb commands 
+    -See in Debug comands
