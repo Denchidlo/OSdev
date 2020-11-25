@@ -28,6 +28,7 @@
         -x      -> hexadump of a section
         -l      -> program header table
         -w      -> show all the debug information
+        -e      -> -S + -h + -l options
     Some examples:
         Shows hexadump of a sellected section 
             $ readelf -x <.section | section number> <objectFile> 

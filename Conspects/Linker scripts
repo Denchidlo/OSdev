@@ -1,0 +1,20 @@
+Linker script is used to set memory layout of program sections
+
+It consist of list of commands with sub-commands
+[
+    COMMAND
+    {
+        sub-command 1
+        sub-command 2
+          ...etc...
+    }
+]
+
+How to compile executable binary with our lds
+    $ gcc -m32 -g -c <source file>.c
+    $ ld -m elf_i386 -o <final binary> -T <linker script>.lds <object file>.o
+
+Options:
+    [-m] -> Specify object file format, that ld produces e.g. elf_i386 produces 32bit ELF binary
+    [-o] -> Specify output file
+    [-T] -> Specify the linker script to use
