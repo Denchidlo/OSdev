@@ -5,7 +5,7 @@ DISK_IMG=disk.img
 
 all: bootdisk clean
 
-.PHONY	bootdisk bootloader os
+.PHONY:	bootloader	os
 
 bootloader:
 	make -C bootloader
